@@ -33,14 +33,14 @@ export function initDarkTheme() {
         });
     };
 
-    const updatePrior = (theme) => {
-        if (!OPTIONS.prior) return;
+    const updateSection = (el, theme) => {
+        if (!el) return;
         if (theme === "dark") {
-            OPTIONS.prior.style.backgroundColor = "var(--black)";
-            OPTIONS.prior.style.color = "white";
+            el.style.backgroundColor = "var(--black)";
+            el.style.color = "var(--white)";
         } else {
-            OPTIONS.prior.style.backgroundColor = "";
-            OPTIONS.prior.style.color = "";
+            el.style.backgroundColor = "";
+            el.style.color = "";
         }
     };
 
@@ -49,14 +49,14 @@ export function initDarkTheme() {
         start: "top center",
         markers: true,
         onEnter: () => {
-            OPTIONS.partnerships.classList.add("is-dark");
+            updateSection(OPTIONS.partnerships, "dark");
+            updateSection(OPTIONS.prior, "dark");
             updateOverlays("dark");
-            updatePrior("dark");
         },
         onLeaveBack: () => {
-            OPTIONS.partnerships.classList.remove("is-dark");
+            updateSection(OPTIONS.partnerships, "light");
+            updateSection(OPTIONS.prior, "light");
             updateOverlays("light");
-            updatePrior("light");
         },
     });
 }
