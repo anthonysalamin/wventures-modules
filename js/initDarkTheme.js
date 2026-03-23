@@ -46,7 +46,7 @@ export function initDarkTheme() {
   
     ScrollTrigger.create({
       trigger: OPTIONS.partnerships,
-      start: "top top",
+      start: "top center",
       onEnter: () => {
         OPTIONS.partnerships.classList.add("is-dark");
         updateOverlays("dark");
