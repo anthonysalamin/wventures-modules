@@ -1,0 +1,9 @@
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
