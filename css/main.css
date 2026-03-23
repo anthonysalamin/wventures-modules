@@ -1,1 +1,83 @@
-/* css */
+<style>
+/* ================================
+   🦄 global overrides
+   ================================ */
+.w-webflow-badge {
+    display: none !important
+}
+
+.svg-embed,
+a,
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 0 !important;
+    outline-style: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-smooth: always
+}
+</style>
+
+<style>
+/* ================================
+   🤖 recaptcha
+   ================================ */
+.grecaptcha-badge {
+    z-index: -1;
+    opacity: 0
+}
+</style>
+
+<style>
+/* ================================
+   🦄 HORIZONTAL SCROLL PREVENTION
+   ================================ */
+body {
+    overflow-x: hidden;
+    overflow-y: auto
+}
+</style>
+
+<style>
+/* ================================
+   🦄 Scroll bar WebKit Chrome 
+   ================================ */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999
+}
+
+/* Scroll bar Firefox */
+scrollbar-width:thin;
+scrollbar-color:#ccc #f5f5f5;
+/* Scroll bar Microsoft Edge and IE */
+-ms-overflow-style:none;
+scrollbar-width:thin;
+scrollbar-color:#ccc #f5f5f5;
+</style>
