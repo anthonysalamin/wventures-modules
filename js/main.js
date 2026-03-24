@@ -9,13 +9,14 @@ console.log(
 );
 
 import { initDarkTheme } from 'https://cdn.wventures.de/js/initDarkTheme.js?v=1.0.0';
+import { initHeaderReveal } from 'https://cdn.wventures.de/js/initHeaderReveal.js?v=1.0.0';
 
 
 // on DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
 
-    // smooth scroll
-    new initDarkTheme();
+    initDarkTheme();
+    initHeaderReveal();
 
     // font-dependent
     document.fonts.ready.then(() => {
