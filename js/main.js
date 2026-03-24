@@ -12,6 +12,7 @@ import { initDarkTheme } from 'https://cdn.wventures.de/js/initDarkTheme.js?v=1.
 import { initHeaderReveal } from 'https://cdn.wventures.de/js/initHeaderReveal.js?v=1.0.0';
 import { initVerticalMarquees } from 'https://cdn.wventures.de/js/initVerticalMarquees.js?v=1.0.0';
 import { initProgressVisibility } from 'https://cdn.wventures.de/js/initProgressVisibility.js?v=1.0.0';
+import { initRevealBig } from 'https://cdn.wventures.de/js/initRevealBig.js?v=1.0.0';
 
 
 // on DOM loaded
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHeaderReveal();
     initVerticalMarquees();
     initProgressVisibility();
+    initRevealBig();
     
     // font-dependent
     document.fonts.ready.then(() => {
