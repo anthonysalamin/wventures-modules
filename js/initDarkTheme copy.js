@@ -14,14 +14,19 @@ export function initDarkTheme() {
         marqueeItems: '[data-theme="marquee-item"]',
     };
 
-    const COLORS = {
-        dark: { solid: "rgba(0, 0, 0, 1)", transparent: "rgba(0, 0, 0, 0)" },
-        light: { solid: "rgba(255, 255, 255, 1)", transparent: "rgba(255, 255, 255, 0)" },
+    const GRADIENTS = {
+        up: {
+            dark: `linear-gradient(to bottom, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
+            light: `linear-gradient(to bottom, white, hsla(0, 0%, 100%, 0) 30%)`,
+        },
+        down: {
+            dark: `linear-gradient(to top, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
+            light: `linear-gradient(to top, white, hsla(0, 0%, 100%, 0) 30%)`,
+        },
     };
 
-    const DURATION = 0.6;
-    const EASE = "power2.inOut";
     const TRANSITION = "background-color 0.6s ease, color 0.6s ease";
+    const TRANSITION_BG = "background-image 0.6s ease";
 
     const timeline = document.querySelector(SELECTORS.timeline);
     const partnerships = document.querySelector(SELECTORS.partnerships);
@@ -31,33 +36,20 @@ export function initDarkTheme() {
 
     if (!timeline || !partnerships) return;
 
-    // --- Transitions for sections ---
+    // --- Transitions ---
     partnerships.style.setProperty("transition", TRANSITION);
     if (prior) prior.style.setProperty("transition", TRANSITION);
 
-    // --- Init CSS custom properties on overlays ---
-    const initOverlay = (el, direction) => {
-        el.style.setProperty("--grad-solid", COLORS.light.solid);
-        el.style.setProperty("--grad-transparent", COLORS.light.transparent);
-        el.style.backgroundImage =
-            direction === "up"
-                ? "linear-gradient(to bottom, var(--grad-solid), var(--grad-transparent) 30%)"
-                : "linear-gradient(to top, var(--grad-solid), var(--grad-transparent) 30%)";
-    };
+    const setTransition = (nodeList, value) =>
+        nodeList.forEach((el) => el.style.setProperty("transition", value));
 
-    overlaysUp.forEach((el) => initOverlay(el, "up"));
-    overlaysDown.forEach((el) => initOverlay(el, "down"));
+    setTransition(overlaysUp, TRANSITION_BG);
+    setTransition(overlaysDown, TRANSITION_BG);
 
     // --- Theme helpers ---
     const applyOverlays = (theme) => {
-        const { solid, transparent } = COLORS[theme];
-        const targets = [...overlaysUp, ...overlaysDown];
-        gsap.to(targets, {
-            "--grad-solid": solid,
-            "--grad-transparent": transparent,
-            duration: DURATION,
-            ease: EASE,
-        });
+        overlaysUp.forEach((el) => (el.style.backgroundImage = GRADIENTS.up[theme]));
+        overlaysDown.forEach((el) => (el.style.backgroundImage = GRADIENTS.down[theme]));
     };
 
     const applyMarqueeItems = (theme) => {
@@ -90,6 +82,7 @@ export function initDarkTheme() {
     ScrollTrigger.create({
         trigger: partnerships,
         start: "top 20%",
+        markers: true,
         onEnter: () => setTheme("dark"),
         onLeaveBack: () => setTheme("light"),
     });
