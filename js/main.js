@@ -17,7 +17,7 @@ import { initRevealSmall } from 'https://cdn.wventures.de/js/initRevealSmall.js?
 import { initTimelineReveal } from 'https://cdn.wventures.de/js/initTimelineReveal.js?v=1.0.0';
 import { initHeroParallax } from 'https://cdn.wventures.de/js/initHeroParallax.js?v=1.0.0';
 import { initSmoothScroll } from 'https://cdn.wventures.de/js/initSmoothScroll.js?v=1.0.0';
-
+import { initNavbarScroll } from 'https://cdn.wventures.de/js/initNavbarScroll.js?v=1.0.0';
 
 // on DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initRevealSmall();
     initTimelineReveal();
     initHeroParallax();
+    initNavbarScroll();
     
     // font-dependent
     document.fonts.ready.then(() => {
