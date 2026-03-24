@@ -24,7 +24,7 @@ export function initDarkTheme() {
     };
 
     console.log("prior element:", OPTIONS.prior);
-    
+
     if (!OPTIONS.timeline || !OPTIONS.partnerships) return;
 
     const updateOverlays = (theme) => {
@@ -50,7 +50,7 @@ export function initDarkTheme() {
     ScrollTrigger.create({
         trigger: OPTIONS.partnerships,
         start: "top center",
-        markers: true,
+        markers: false,
         onEnter: () => {
             updateSection(OPTIONS.partnerships, "dark");
             updateSection(OPTIONS.prior, "dark");
