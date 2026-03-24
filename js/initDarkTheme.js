@@ -36,11 +36,11 @@ export function initDarkTheme() {
     const updateSection = (el, theme) => {
         if (!el) return;
         if (theme === "dark") {
-            el.style.backgroundColor = "var(--black)";
-            el.style.color = "var(--white)";
+            el.style.setProperty("background-color", "var(--black)", "important");
+            el.style.setProperty("color", "var(--white)", "important");
         } else {
-            el.style.backgroundColor = "";
-            el.style.color = "";
+            el.style.removeProperty("background-color");
+            el.style.removeProperty("color");
         }
     };
 
