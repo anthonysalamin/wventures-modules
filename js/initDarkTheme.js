@@ -16,7 +16,6 @@ export function initDarkTheme() {
 
     const DURATION = 0.6;
     const EASE = "power2.inOut";
-    const TRANSITION = "background-color 0.6s ease, color 0.6s ease";
 
     // --- Resolve CSS variables at runtime ---
     const resolveColor = (cssVar) => {
@@ -36,6 +35,7 @@ export function initDarkTheme() {
 
     const black = resolveColor("var(--black)");
     const white = resolveColor("var(--white)");
+    const grey = resolveColor("var(--grey)");
 
     const COLORS = {
         dark: { solid: toRGBA(black, 1), transparent: toRGBA(black, 0) },
@@ -51,10 +51,6 @@ export function initDarkTheme() {
 
     if (!timeline || !partnerships) return;
 
-    // --- Transitions for sections ---
-    partnerships.style.setProperty("transition", TRANSITION);
-    if (prior) prior.style.setProperty("transition", TRANSITION);
-
     // --- Init CSS custom properties on overlays ---
     const initOverlay = (el, direction) => {
         el.style.setProperty("--grad-solid", COLORS.light.solid);
@@ -68,42 +64,32 @@ export function initDarkTheme() {
     overlaysUp.forEach((el) => initOverlay(el, "up"));
     overlaysDown.forEach((el) => initOverlay(el, "down"));
 
-    // --- Theme helpers ---
-    const applyOverlays = (theme) => {
-        const { solid, transparent } = COLORS[theme];
-        const targets = [...overlaysUp, ...overlaysDown];
-        gsap.to(targets, {
-            "--grad-solid": solid,
-            "--grad-transparent": transparent,
-            duration: DURATION,
-            ease: EASE,
-        });
-    };
-
-    const applyMarqueeItems = (theme) => {
-        const bg = theme === "dark" ? "var(--grey)" : "var(--white)";
-        document.querySelectorAll(SELECTORS.marqueeItems).forEach((el) => {
-            el.style.setProperty("transition", TRANSITION);
-            el.style.setProperty("background-color", bg, "important");
-        });
-    };
-
-    const applySection = (el, theme) => {
-        if (!el) return;
-        if (theme === "dark") {
-            el.style.setProperty("background-color", "var(--black)", "important");
-            el.style.setProperty("color", "var(--white)", "important");
-        } else {
-            el.style.removeProperty("background-color");
-            el.style.removeProperty("color");
-        }
-    };
-
+    // --- Theme setter (all GSAP, single timeline) ---
     const setTheme = (theme) => {
-        applySection(partnerships, theme);
-        applySection(prior, theme);
-        applyOverlays(theme);
-        applyMarqueeItems(theme);
+        const isDark = theme === "dark";
+        const tl = gsap.timeline({ defaults: { duration: DURATION, ease: EASE } });
+
+        // Sections
+        const sections = [partnerships, prior].filter(Boolean);
+        tl.to(sections, {
+            backgroundColor: isDark ? black : white,
+            color: isDark ? white : black,
+        }, 0);
+
+        // Overlays
+        const overlayTargets = [...overlaysUp, ...overlaysDown];
+        tl.to(overlayTargets, {
+            "--grad-solid": COLORS[theme].solid,
+            "--grad-transparent": COLORS[theme].transparent,
+        }, 0);
+
+        // Marquee items
+        const marqueeItems = document.querySelectorAll(SELECTORS.marqueeItems);
+        if (marqueeItems.length) {
+            tl.to(marqueeItems, {
+                backgroundColor: isDark ? grey : white,
+            }, 0);
+        }
     };
 
     // --- ScrollTrigger ---
