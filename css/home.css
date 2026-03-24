@@ -1,0 +1,19 @@
+/* ================================
+   🦄 hide header element for GSAP reveal animation
+   ================================ */
+@media (min-width: 992px) {
+    [data-load='navbar'] {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    [data-load='punchline'] {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    [data-load='images'] {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
