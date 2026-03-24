@@ -28,6 +28,12 @@ export function initDarkTheme() {
         OPTIONS.prior.style.setProperty("transition", "background-color 0.6s ease, color 0.6s ease");
     }
     OPTIONS.partnerships.style.setProperty("transition", "background-color 0.6s ease, color 0.6s ease");
+    OPTIONS.overlaysUp.forEach((el) => {
+        el.style.setProperty("transition", "background-image 0.6s ease");
+    });
+    OPTIONS.overlaysDown.forEach((el) => {
+        el.style.setProperty("transition", "background-image 0.6s ease");
+    });
 
     const updateOverlays = (theme) => {
         OPTIONS.overlaysUp.forEach((el) => {
