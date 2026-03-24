@@ -23,6 +23,7 @@ import { initContactScroll } from 'https://cdn.wventures.de/js/initContactScroll
 import { initTypedFields } from 'https://cdn.wventures.de/js/initTypedFields.js?v=1.0.0';
 import { initScrollProgress } from 'https://cdn.wventures.de/js/initScrollProgress.js?v=1.0.0';
 import { initCurrentYear } from 'https://cdn.wventures.de/js/initCurrentYear.js?v=1.0.0';
+import { initLanguageRedirect } from 'https://cdn.wventures.de/js/initLanguageRedirect.js?v=1.0.0';
 
 // on DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTypedFields();
     initScrollProgress();
     initCurrentYear();
+    initLanguageRedirect();
     
     // font-dependent
     document.fonts.ready.then(() => {
