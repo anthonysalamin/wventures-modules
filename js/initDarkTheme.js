@@ -66,8 +66,8 @@ export function initDarkTheme() {
 
     ScrollTrigger.create({
         trigger: OPTIONS.partnerships,
-        start: "top center",
-        markers: false,
+        start: "top 20%",
+        markers: true,
         onEnter: () => {
             updateSection(OPTIONS.partnerships, "dark");
             updateSection(OPTIONS.prior, "dark");
