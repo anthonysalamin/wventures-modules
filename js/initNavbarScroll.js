@@ -10,7 +10,7 @@ export function initNavbarScroll(options = {}) {
   const OPTIONS = {
     NAVBAR: document.querySelector('[data-nav="navbar"]'),
     THRESHOLD_VH: 0.65,
-    HIDE_Y_PERCENT: -105,
+    HIDE_Y_PERCENT: -150,
     DURATION: 0.4,
     EASE: "power2.inOut",
     POLL_INTERVAL: 100,
