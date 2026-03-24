@@ -11,6 +11,7 @@ export function initDarkTheme() {
         prior: '[data-section="prior"]',
         overlaysUp: '[data-markee="overlay-up"]',
         overlaysDown: '[data-markee="overlay-down"]',
+        marqueeItems: '[data-theme="marquee-item"]',
     };
 
     const GRADIENTS = {
@@ -32,6 +33,7 @@ export function initDarkTheme() {
     const prior = document.querySelector(SELECTORS.prior);
     const overlaysUp = document.querySelectorAll(SELECTORS.overlaysUp);
     const overlaysDown = document.querySelectorAll(SELECTORS.overlaysDown);
+    const marqueeItems = document.querySelectorAll(SELECTORS.marqueeItems);
 
     if (!timeline || !partnerships) return;
 
@@ -44,11 +46,17 @@ export function initDarkTheme() {
 
     setTransition(overlaysUp, TRANSITION_BG);
     setTransition(overlaysDown, TRANSITION_BG);
+    setTransition(marqueeItems, TRANSITION);
 
     // --- Theme helpers ---
     const applyOverlays = (theme) => {
         overlaysUp.forEach((el) => (el.style.backgroundImage = GRADIENTS.up[theme]));
         overlaysDown.forEach((el) => (el.style.backgroundImage = GRADIENTS.down[theme]));
+    };
+
+    const applyMarqueeItems = (theme) => {
+        const bg = theme === "dark" ? "var(--grey)" : "var(--white)";
+        marqueeItems.forEach((el) => el.style.setProperty("background-color", bg, "important"));
     };
 
     const applySection = (el, theme) => {
@@ -66,6 +74,7 @@ export function initDarkTheme() {
         applySection(partnerships, theme);
         applySection(prior, theme);
         applyOverlays(theme);
+        applyMarqueeItems(theme);
     };
 
     // --- ScrollTrigger ---
