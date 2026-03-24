@@ -22,6 +22,9 @@ export function initDarkTheme() {
             },
         },
     };
+
+    console.log("prior element:", OPTIONS.prior);
+    
     if (!OPTIONS.timeline || !OPTIONS.partnerships) return;
 
     const updateOverlays = (theme) => {
