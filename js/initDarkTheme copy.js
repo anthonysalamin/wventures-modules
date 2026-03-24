@@ -14,20 +14,35 @@ export function initDarkTheme() {
         marqueeItems: '[data-theme="marquee-item"]',
     };
 
-    const GRADIENTS = {
-        up: {
-            dark: `linear-gradient(to bottom, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
-            light: `linear-gradient(to bottom, white, hsla(0, 0%, 100%, 0) 30%)`,
-        },
-        down: {
-            dark: `linear-gradient(to top, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
-            light: `linear-gradient(to top, white, hsla(0, 0%, 100%, 0) 30%)`,
-        },
+    const DURATION = 0.6;
+    const EASE = "power2.inOut";
+
+    // --- Resolve CSS variables at runtime ---
+    const resolveColor = (cssVar) => {
+        const temp = document.createElement("div");
+        temp.style.color = cssVar;
+        document.body.appendChild(temp);
+        const resolved = getComputedStyle(temp).color;
+        document.body.removeChild(temp);
+        return resolved;
     };
 
-    const TRANSITION = "background-color 0.6s ease, color 0.6s ease";
-    const TRANSITION_BG = "background-image 0.6s ease";
+    const toRGBA = (rgb, alpha = 1) => {
+        const match = rgb.match(/[\d.]+/g);
+        if (!match || match.length < 3) return rgb;
+        return `rgba(${match[0]}, ${match[1]}, ${match[2]}, ${alpha})`;
+    };
 
+    const black = resolveColor("var(--black)");
+    const white = resolveColor("var(--white)");
+    const grey = resolveColor("var(--grey)");
+
+    const COLORS = {
+        dark: { solid: toRGBA(black, 1), transparent: toRGBA(black, 0) },
+        light: { solid: toRGBA(white, 1), transparent: toRGBA(white, 0) },
+    };
+
+    // --- Query DOM ---
     const timeline = document.querySelector(SELECTORS.timeline);
     const partnerships = document.querySelector(SELECTORS.partnerships);
     const prior = document.querySelector(SELECTORS.prior);
@@ -36,53 +51,51 @@ export function initDarkTheme() {
 
     if (!timeline || !partnerships) return;
 
-    // --- Transitions ---
-    partnerships.style.setProperty("transition", TRANSITION);
-    if (prior) prior.style.setProperty("transition", TRANSITION);
-
-    const setTransition = (nodeList, value) =>
-        nodeList.forEach((el) => el.style.setProperty("transition", value));
-
-    setTransition(overlaysUp, TRANSITION_BG);
-    setTransition(overlaysDown, TRANSITION_BG);
-
-    // --- Theme helpers ---
-    const applyOverlays = (theme) => {
-        overlaysUp.forEach((el) => (el.style.backgroundImage = GRADIENTS.up[theme]));
-        overlaysDown.forEach((el) => (el.style.backgroundImage = GRADIENTS.down[theme]));
+    // --- Init CSS custom properties on overlays ---
+    const initOverlay = (el, direction) => {
+        el.style.setProperty("--grad-solid", COLORS.light.solid);
+        el.style.setProperty("--grad-transparent", COLORS.light.transparent);
+        el.style.backgroundImage =
+            direction === "up"
+                ? "linear-gradient(to bottom, var(--grad-solid), var(--grad-transparent) 30%)"
+                : "linear-gradient(to top, var(--grad-solid), var(--grad-transparent) 30%)";
     };
 
-    const applyMarqueeItems = (theme) => {
-        const bg = theme === "dark" ? "var(--grey)" : "var(--white)";
-        document.querySelectorAll(SELECTORS.marqueeItems).forEach((el) => {
-            el.style.setProperty("transition", TRANSITION);
-            el.style.setProperty("background-color", bg, "important");
-        });
-    };
+    overlaysUp.forEach((el) => initOverlay(el, "up"));
+    overlaysDown.forEach((el) => initOverlay(el, "down"));
 
-    const applySection = (el, theme) => {
-        if (!el) return;
-        if (theme === "dark") {
-            el.style.setProperty("background-color", "var(--black)", "important");
-            el.style.setProperty("color", "var(--white)", "important");
-        } else {
-            el.style.removeProperty("background-color");
-            el.style.removeProperty("color");
-        }
-    };
-
+    // --- Theme setter (all GSAP, single timeline) ---
     const setTheme = (theme) => {
-        applySection(partnerships, theme);
-        applySection(prior, theme);
-        applyOverlays(theme);
-        applyMarqueeItems(theme);
+        const isDark = theme === "dark";
+        const tl = gsap.timeline({ defaults: { duration: DURATION, ease: EASE } });
+
+        // Sections
+        const sections = [partnerships, prior].filter(Boolean);
+        tl.to(sections, {
+            backgroundColor: isDark ? black : white,
+            color: isDark ? white : black,
+        }, 0);
+
+        // Overlays
+        const overlayTargets = [...overlaysUp, ...overlaysDown];
+        tl.to(overlayTargets, {
+            "--grad-solid": COLORS[theme].solid,
+            "--grad-transparent": COLORS[theme].transparent,
+        }, 0);
+
+        // Marquee items
+        const marqueeItems = document.querySelectorAll(SELECTORS.marqueeItems);
+        if (marqueeItems.length) {
+            tl.to(marqueeItems, {
+                backgroundColor: isDark ? grey : white,
+            }, 0);
+        }
     };
 
     // --- ScrollTrigger ---
     ScrollTrigger.create({
         trigger: partnerships,
         start: "top 20%",
-        markers: true,
         onEnter: () => setTheme("dark"),
         onLeaveBack: () => setTheme("light"),
     });

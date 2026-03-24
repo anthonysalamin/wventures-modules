@@ -90,6 +90,14 @@ export function initDarkTheme() {
                 backgroundColor: isDark ? grey : white,
             }, 0);
         }
+
+        // SVG logos
+        const logoGroups = document.querySelectorAll('.logo-svg .logo-group');
+        if (logoGroups.length) {
+            tl.to(logoGroups, {
+                attr: { fill: isDark ? white : black },
+            }, 0);
+        }
     };
 
     // --- ScrollTrigger ---
