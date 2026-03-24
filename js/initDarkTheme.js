@@ -24,6 +24,11 @@ export function initDarkTheme() {
     };
     if (!OPTIONS.timeline || !OPTIONS.partnerships) return;
 
+    if (OPTIONS.prior) {
+        OPTIONS.prior.style.setProperty("transition", "background-color 0.6s ease, color 0.6s ease");
+    }
+    OPTIONS.partnerships.style.setProperty("transition", "background-color 0.6s ease, color 0.6s ease");
+
     const updateOverlays = (theme) => {
         OPTIONS.overlaysUp.forEach((el) => {
             el.style.backgroundImage = OPTIONS.gradients.up[theme];
