@@ -15,6 +15,7 @@ import { initProgressVisibility } from 'https://cdn.wventures.de/js/initProgress
 import { initRevealBig } from 'https://cdn.wventures.de/js/initRevealBig.js?v=1.0.0';
 import { initRevealSmall } from 'https://cdn.wventures.de/js/initRevealSmall.js?v=1.0.0';
 import { initTimelineReveal } from 'https://cdn.wventures.de/js/initTimelineReveal.js?v=1.0.0';
+import { initHeroParallax } from 'https://cdn.wventures.de/js/initHeroParallax.js?v=1.0.0';
 
 
 // on DOM loaded
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initRevealBig();
     initRevealSmall();
     initTimelineReveal();
+    initHeroParallax();
     
     // font-dependent
     document.fonts.ready.then(() => {
