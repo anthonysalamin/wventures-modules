@@ -22,9 +22,6 @@ export function initDarkTheme() {
             },
         },
     };
-
-    console.log("prior element:", OPTIONS.prior);
-
     if (!OPTIONS.timeline || !OPTIONS.partnerships) return;
 
     const updateOverlays = (theme) => {
@@ -47,19 +44,41 @@ export function initDarkTheme() {
         }
     };
 
+    const logStyles = (label) => {
+        console.log(`=== ${label} ===`);
+
+        if (OPTIONS.prior) {
+            const priorComputed = getComputedStyle(OPTIONS.prior);
+            console.log("prior inline bg:", OPTIONS.prior.style.backgroundColor);
+            console.log("prior inline color:", OPTIONS.prior.style.color);
+            console.log("prior computed bg:", priorComputed.backgroundColor);
+            console.log("prior computed color:", priorComputed.color);
+        } else {
+            console.warn("prior element is null");
+        }
+
+        const partnerComputed = getComputedStyle(OPTIONS.partnerships);
+        console.log("partnerships inline bg:", OPTIONS.partnerships.style.backgroundColor);
+        console.log("partnerships inline color:", OPTIONS.partnerships.style.color);
+        console.log("partnerships computed bg:", partnerComputed.backgroundColor);
+        console.log("partnerships computed color:", partnerComputed.color);
+    };
+
     ScrollTrigger.create({
         trigger: OPTIONS.partnerships,
         start: "top center",
-        markers: false,
+        markers: true,
         onEnter: () => {
             updateSection(OPTIONS.partnerships, "dark");
             updateSection(OPTIONS.prior, "dark");
             updateOverlays("dark");
+            logStyles("onEnter");
         },
         onLeaveBack: () => {
             updateSection(OPTIONS.partnerships, "light");
             updateSection(OPTIONS.prior, "light");
             updateOverlays("light");
+            logStyles("onLeaveBack");
         },
     });
 }
