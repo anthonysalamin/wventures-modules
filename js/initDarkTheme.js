@@ -33,7 +33,6 @@ export function initDarkTheme() {
     const prior = document.querySelector(SELECTORS.prior);
     const overlaysUp = document.querySelectorAll(SELECTORS.overlaysUp);
     const overlaysDown = document.querySelectorAll(SELECTORS.overlaysDown);
-    const marqueeItems = document.querySelectorAll(SELECTORS.marqueeItems);
 
     if (!timeline || !partnerships) return;
 
@@ -46,7 +45,6 @@ export function initDarkTheme() {
 
     setTransition(overlaysUp, TRANSITION_BG);
     setTransition(overlaysDown, TRANSITION_BG);
-    setTransition(marqueeItems, TRANSITION);
 
     // --- Theme helpers ---
     const applyOverlays = (theme) => {
@@ -56,7 +54,10 @@ export function initDarkTheme() {
 
     const applyMarqueeItems = (theme) => {
         const bg = theme === "dark" ? "var(--grey)" : "var(--white)";
-        marqueeItems.forEach((el) => el.style.setProperty("background-color", bg, "important"));
+        document.querySelectorAll(SELECTORS.marqueeItems).forEach((el) => {
+            el.style.setProperty("transition", TRANSITION);
+            el.style.setProperty("background-color", bg, "important");
+        });
     };
 
     const applySection = (el, theme) => {
