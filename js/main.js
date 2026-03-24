@@ -20,6 +20,7 @@ import { initSmoothScroll } from 'https://cdn.wventures.de/js/initSmoothScroll.j
 import { initNavbarScroll } from 'https://cdn.wventures.de/js/initNavbarScroll.js?v=1.0.0';
 import { initMobileNav } from 'https://cdn.wventures.de/js/initMobileNav.js?v=1.0.0';
 import { initContactScroll } from 'https://cdn.wventures.de/js/initContactScroll.js?v=1.0.0';
+import { initTypedFields } from 'https://cdn.wventures.de/js/initTypedFields.js?v=1.0.0';
 
 // on DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initNavbarScroll();
     initMobileNav();
     initContactScroll();
+    initTypedFields();
     
     // font-dependent
     document.fonts.ready.then(() => {
