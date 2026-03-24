@@ -25,6 +25,7 @@ import { initScrollProgress } from 'https://cdn.wventures.de/js/initScrollProgre
 import { initCurrentYear } from 'https://cdn.wventures.de/js/initCurrentYear.js?v=1.0.0';
 import { initLanguageRedirect } from 'https://cdn.wventures.de/js/initLanguageRedirect.js?v=1.0.0';
 import { initCustomCursor } from 'https://cdn.wventures.de/js/initCustomCursor.js?v=1.0.0';
+import { initSVGInjection } from 'https://cdn.wventures.de/js/initSVGInjection.js?v=1.0.0';
 
 // on DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCurrentYear();
     initLanguageRedirect();
     initCustomCursor();
+    initSVGInjection();
     
     // font-dependent
     document.fonts.ready.then(() => {
