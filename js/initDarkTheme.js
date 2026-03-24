@@ -1,5 +1,5 @@
 /**
- * WVENTURES | initDarkTheme 🔥
+ * WVENTURES | initDarkTheme
  * Scroll-triggered color transition for the partnerships section with dynamic overlay gradients.
  * @build 17.03.25
  * @updated 23.03.26
