@@ -2,49 +2,56 @@
  * WVENTURES | initDarkTheme
  * Scroll-triggered color transition for the partnerships section with dynamic overlay gradients.
  * @build 17.03.25
- * @updated 23.03.26
+ * @updated 24.03.26
  */
 export function initDarkTheme() {
-    const OPTIONS = {
-        timeline: document.querySelector('[data-section="timeline"]'),
-        partnerships: document.querySelector('[data-section="partnerships"]'),
-        prior: document.querySelector('[data-section="prior"]'),
-        overlaysUp: document.querySelectorAll('[data-markee="overlay-up"]'),
-        overlaysDown: document.querySelectorAll('[data-markee="overlay-down"]'),
-        gradients: {
-            up: {
-                dark: `linear-gradient(to bottom, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
-                light: `linear-gradient(to bottom, white, hsla(0, 0%, 100%, 0) 30%)`,
-            },
-            down: {
-                dark: `linear-gradient(to top, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
-                light: `linear-gradient(to top, white, hsla(0, 0%, 100%, 0) 30%)`,
-            },
+    const SELECTORS = {
+        timeline: '[data-section="timeline"]',
+        partnerships: '[data-section="partnerships"]',
+        prior: '[data-section="prior"]',
+        overlaysUp: '[data-markee="overlay-up"]',
+        overlaysDown: '[data-markee="overlay-down"]',
+    };
+
+    const GRADIENTS = {
+        up: {
+            dark: `linear-gradient(to bottom, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
+            light: `linear-gradient(to bottom, white, hsla(0, 0%, 100%, 0) 30%)`,
+        },
+        down: {
+            dark: `linear-gradient(to top, var(--black), hsla(0, 0%, 0%, 0) 30%)`,
+            light: `linear-gradient(to top, white, hsla(0, 0%, 100%, 0) 30%)`,
         },
     };
-    if (!OPTIONS.timeline || !OPTIONS.partnerships) return;
 
-    if (OPTIONS.prior) {
-        OPTIONS.prior.style.setProperty("transition", "background-color 0.6s ease, color 0.6s ease");
-    }
-    OPTIONS.partnerships.style.setProperty("transition", "background-color 0.6s ease, color 0.6s ease");
-    OPTIONS.overlaysUp.forEach((el) => {
-        el.style.setProperty("transition", "background-image 0.6s ease");
-    });
-    OPTIONS.overlaysDown.forEach((el) => {
-        el.style.setProperty("transition", "background-image 0.6s ease");
-    });
+    const TRANSITION = "background-color 0.6s ease, color 0.6s ease";
+    const TRANSITION_BG = "background-image 0.6s ease";
 
-    const updateOverlays = (theme) => {
-        OPTIONS.overlaysUp.forEach((el) => {
-            el.style.backgroundImage = OPTIONS.gradients.up[theme];
-        });
-        OPTIONS.overlaysDown.forEach((el) => {
-            el.style.backgroundImage = OPTIONS.gradients.down[theme];
-        });
+    const timeline = document.querySelector(SELECTORS.timeline);
+    const partnerships = document.querySelector(SELECTORS.partnerships);
+    const prior = document.querySelector(SELECTORS.prior);
+    const overlaysUp = document.querySelectorAll(SELECTORS.overlaysUp);
+    const overlaysDown = document.querySelectorAll(SELECTORS.overlaysDown);
+
+    if (!timeline || !partnerships) return;
+
+    // --- Transitions ---
+    partnerships.style.setProperty("transition", TRANSITION);
+    if (prior) prior.style.setProperty("transition", TRANSITION);
+
+    const setTransition = (nodeList, value) =>
+        nodeList.forEach((el) => el.style.setProperty("transition", value));
+
+    setTransition(overlaysUp, TRANSITION_BG);
+    setTransition(overlaysDown, TRANSITION_BG);
+
+    // --- Theme helpers ---
+    const applyOverlays = (theme) => {
+        overlaysUp.forEach((el) => (el.style.backgroundImage = GRADIENTS.up[theme]));
+        overlaysDown.forEach((el) => (el.style.backgroundImage = GRADIENTS.down[theme]));
     };
 
-    const updateSection = (el, theme) => {
+    const applySection = (el, theme) => {
         if (!el) return;
         if (theme === "dark") {
             el.style.setProperty("background-color", "var(--black)", "important");
@@ -55,41 +62,17 @@ export function initDarkTheme() {
         }
     };
 
-    const logStyles = (label) => {
-        console.log(`=== ${label} ===`);
-
-        if (OPTIONS.prior) {
-            const priorComputed = getComputedStyle(OPTIONS.prior);
-            console.log("prior inline bg:", OPTIONS.prior.style.backgroundColor);
-            console.log("prior inline color:", OPTIONS.prior.style.color);
-            console.log("prior computed bg:", priorComputed.backgroundColor);
-            console.log("prior computed color:", priorComputed.color);
-        } else {
-            console.warn("prior element is null");
-        }
-
-        const partnerComputed = getComputedStyle(OPTIONS.partnerships);
-        console.log("partnerships inline bg:", OPTIONS.partnerships.style.backgroundColor);
-        console.log("partnerships inline color:", OPTIONS.partnerships.style.color);
-        console.log("partnerships computed bg:", partnerComputed.backgroundColor);
-        console.log("partnerships computed color:", partnerComputed.color);
+    const setTheme = (theme) => {
+        applySection(partnerships, theme);
+        applySection(prior, theme);
+        applyOverlays(theme);
     };
 
+    // --- ScrollTrigger ---
     ScrollTrigger.create({
-        trigger: OPTIONS.partnerships,
+        trigger: partnerships,
         start: "top 20%",
-        markers: true,
-        onEnter: () => {
-            updateSection(OPTIONS.partnerships, "dark");
-            updateSection(OPTIONS.prior, "dark");
-            updateOverlays("dark");
-            logStyles("onEnter");
-        },
-        onLeaveBack: () => {
-            updateSection(OPTIONS.partnerships, "light");
-            updateSection(OPTIONS.prior, "light");
-            updateOverlays("light");
-            logStyles("onLeaveBack");
-        },
+        onEnter: () => setTheme("dark"),
+        onLeaveBack: () => setTheme("light"),
     });
 }
