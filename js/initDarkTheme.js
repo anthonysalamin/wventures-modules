@@ -14,15 +14,35 @@ export function initDarkTheme() {
         marqueeItems: '[data-theme="marquee-item"]',
     };
 
-    const COLORS = {
-        dark: { solid: "rgba(0, 0, 0, 1)", transparent: "rgba(0, 0, 0, 0)" },
-        light: { solid: "rgba(255, 255, 255, 1)", transparent: "rgba(255, 255, 255, 0)" },
-    };
-
     const DURATION = 0.6;
     const EASE = "power2.inOut";
     const TRANSITION = "background-color 0.6s ease, color 0.6s ease";
 
+    // --- Resolve CSS variables at runtime ---
+    const resolveColor = (cssVar) => {
+        const temp = document.createElement("div");
+        temp.style.color = cssVar;
+        document.body.appendChild(temp);
+        const resolved = getComputedStyle(temp).color;
+        document.body.removeChild(temp);
+        return resolved;
+    };
+
+    const toRGBA = (rgb, alpha = 1) => {
+        const match = rgb.match(/[\d.]+/g);
+        if (!match || match.length < 3) return rgb;
+        return `rgba(${match[0]}, ${match[1]}, ${match[2]}, ${alpha})`;
+    };
+
+    const black = resolveColor("var(--black)");
+    const white = resolveColor("var(--white)");
+
+    const COLORS = {
+        dark: { solid: toRGBA(black, 1), transparent: toRGBA(black, 0) },
+        light: { solid: toRGBA(white, 1), transparent: toRGBA(white, 0) },
+    };
+
+    // --- Query DOM ---
     const timeline = document.querySelector(SELECTORS.timeline);
     const partnerships = document.querySelector(SELECTORS.partnerships);
     const prior = document.querySelector(SELECTORS.prior);
