@@ -72,6 +72,7 @@ export function initDarkTheme() {
     ScrollTrigger.create({
         trigger: partnerships,
         start: "top 20%",
+        markers: true,
         onEnter: () => setTheme("dark"),
         onLeaveBack: () => setTheme("light"),
     });
