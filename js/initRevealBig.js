@@ -21,8 +21,8 @@ function setAlphaToPointThree(color, opacity) {
       TYPE: "words, chars",
       DURATION: 0.3,
       STAGGER: 0.02,
-      START: "top 20%", // START: "top 80%"
-      END: "bottom 10%", // END: "center 20%"
+      START: "top 40%", // START: "top 80%"
+      END: "bottom 20%", // END: "center 20%"
       ...options,
     };
   
