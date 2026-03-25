@@ -22,7 +22,7 @@ function setAlphaToPointThree(color, opacity) {
       DURATION: 0.3,
       STAGGER: 0.02,
       START: "top 20%", // START: "top 80%"
-      END: "center 20%",
+      END: "bottom 10%", // END: "center 20%"
       ...options,
     };
   
