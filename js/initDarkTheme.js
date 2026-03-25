@@ -118,7 +118,7 @@ export function initDarkTheme() {
     };
 
     ScrollTrigger.matchMedia({
-        "(max-width: 479px)": () => createTrigger("top 10%"),
+        "(max-width: 479px)": () => createTrigger("top top"),
         "(min-width: 480px)": () => createTrigger("top 20%"),
     });
 }
