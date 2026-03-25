@@ -2,7 +2,7 @@
  * WVENTURES | initDarkTheme
  * Scroll-triggered color transition for the partnerships section with dynamic overlay gradients.
  * @build 17.03.25
- * @updated 24.03.26
+ * @updated 25.03.26
  */
 export function initDarkTheme() {
     const SELECTORS = {
@@ -17,7 +17,8 @@ export function initDarkTheme() {
     const DURATION = 0.6;
     const EASE = "power2.inOut";
 
-    // --- Resolve CSS variables at runtime ---
+    // ── Color Utilities ───────────────────────────────
+
     const resolveColor = (cssVar) => {
         const temp = document.createElement("div");
         temp.style.color = cssVar;
@@ -33,6 +34,8 @@ export function initDarkTheme() {
         return `rgba(${match[0]}, ${match[1]}, ${match[2]}, ${alpha})`;
     };
 
+    // ── Resolved Color Tokens ─────────────────────────
+
     const black = resolveColor("var(--black)");
     const white = resolveColor("var(--white)");
     const grey = resolveColor("var(--grey)");
@@ -42,7 +45,8 @@ export function initDarkTheme() {
         light: { solid: toRGBA(white, 1), transparent: toRGBA(white, 0) },
     };
 
-    // --- Query DOM ---
+    // ── DOM References ────────────────────────────────
+
     const timeline = document.querySelector(SELECTORS.timeline);
     const partnerships = document.querySelector(SELECTORS.partnerships);
     const prior = document.querySelector(SELECTORS.prior);
@@ -51,7 +55,8 @@ export function initDarkTheme() {
 
     if (!timeline || !partnerships) return;
 
-    // --- Init CSS custom properties on overlays ---
+    // ── Overlay Initialization ────────────────────────
+
     const initOverlay = (el, direction) => {
         el.style.setProperty("--grad-solid", COLORS.light.solid);
         el.style.setProperty("--grad-transparent", COLORS.light.transparent);
@@ -64,7 +69,8 @@ export function initDarkTheme() {
     overlaysUp.forEach((el) => initOverlay(el, "up"));
     overlaysDown.forEach((el) => initOverlay(el, "down"));
 
-    // --- Theme setter (all GSAP, single timeline) ---
+    // ── Theme Transition ──────────────────────────────
+
     const setTheme = (theme) => {
         const isDark = theme === "dark";
         const tl = gsap.timeline({ defaults: { duration: DURATION, ease: EASE } });
@@ -100,11 +106,19 @@ export function initDarkTheme() {
         }
     };
 
-    // --- ScrollTrigger ---
-    ScrollTrigger.create({
-        trigger: partnerships,
-        start: "top 20%",
-        onEnter: () => setTheme("dark"),
-        onLeaveBack: () => setTheme("light"),
+    // ── ScrollTrigger (Responsive) ────────────────────
+
+    const createTrigger = (start) => {
+        ScrollTrigger.create({
+            trigger: partnerships,
+            start,
+            onEnter: () => setTheme("dark"),
+            onLeaveBack: () => setTheme("light"),
+        });
+    };
+
+    ScrollTrigger.matchMedia({
+        "(max-width: 479px)": () => createTrigger("top top"),
+        "(min-width: 480px)": () => createTrigger("top 20%"),
     });
 }
