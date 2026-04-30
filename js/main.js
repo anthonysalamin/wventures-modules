@@ -7,17 +7,7 @@
  * @author TONYTONY Sàrl
  */
 
-/*
-const ENV = {
-    isStaging: location.hostname.endsWith(".webflow.io"),
-    isProduction: location.hostname === "wventures.de"
-};
-*/
-
-console.log(
-    "%c🥭 Deploying main modules",
-    "color: white; background: #2d6a4f; padding: 2px 6px; border-radius: 3px;",
-);
+console.log("%c🥭 Deploying main modules", "color: white; background: #2d6a4f; padding: 2px 6px; border-radius: 3px;");
 
 // ── CDN Imports ──────────────────────────────────────────────────────────────
 
