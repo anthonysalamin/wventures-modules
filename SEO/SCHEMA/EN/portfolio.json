@@ -1,0 +1,234 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.wventures.de/#organization",
+            "name": "W Ventures GmbH",
+            "url": "https://www.wventures.de/",
+            "logo": "https://www.wventures.de/favicon.ico",
+            "description": "W Ventures is a Berlin-based venture capital and venture design firm supporting startups and companies from seed to growth across B2B and B2C sectors.",
+            "foundingDate": "2013",
+            "founder": {
+                "@id": "https://www.wventures.de/#jochen-wilms"
+            },
+            "address": [
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Goethestraße 81",
+                    "addressLocality": "Berlin",
+                    "postalCode": "10623",
+                    "addressCountry": "DE"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Lissaboner Allee 1",
+                    "addressLocality": "Dortmund",
+                    "postalCode": "44269",
+                    "addressCountry": "DE"
+                }
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "info@wventures.de",
+                "availableLanguage": [
+                    "en",
+                    "de"
+                ]
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/wventures/"
+            ],
+            "areaServed": [
+                "Europe",
+                "United States",
+                "Asia"
+            ],
+            "knowsAbout": [
+                "Venture Capital",
+                "Startup Acceleration",
+                "Business Development",
+                "Strategy Consulting",
+                "Digital Transformation",
+                "FinTech",
+                "SaaS",
+                "DeepTech",
+                "PropTech",
+                "Climate & Energy",
+                "Digital Health",
+                "Mobility",
+                "Industry 4.0"
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://www.wventures.de/#jochen-wilms",
+            "name": "Jochen M. Wilms",
+            "jobTitle": "Founder & Managing Director",
+            "sameAs": [
+                "https://www.linkedin.com/in/jochenwilms/"
+            ],
+            "worksFor": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.wventures.de/#website",
+            "url": "https://www.wventures.de/",
+            "name": "W Ventures",
+            "publisher": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        },
+        {
+            "@type": "CollectionPage",
+            "@id": "https://www.wventures.de/portfolio#webpage",
+            "url": "https://www.wventures.de/portfolio",
+            "name": "W Ventures Portfolio – Startup & Growth Investments",
+            "description": "Explore W Ventures' portfolio of 30+ companies across FinTech, DeepTech, SaaS, Digital Health and more, from seed to growth.",
+            "inLanguage": "en",
+            "isPartOf": {
+                "@id": "https://www.wventures.de/#website"
+            },
+            "about": {
+                "@id": "https://www.wventures.de/#organization"
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.wventures.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Portfolio",
+                        "item": "https://www.wventures.de/portfolio"
+                    }
+                ]
+            },
+            "mainEntity": {
+                "@type": "ItemList",
+                "name": "W Ventures Investment Portfolio",
+                "numberOfItems": 30,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "Robinhood",
+                            "url": "https://www.robinhood.com/",
+                            "description": "Stock brokerage offering commission-free trading of stocks, options, ETFs, and cryptocurrencies.",
+                            "industry": "FinTech"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "Palantir Technologies",
+                            "url": "https://www.palantir.com/",
+                            "description": "Software platform for integrating, visualizing, and analyzing large-scale data for government and enterprise.",
+                            "industry": "Data Infrastructure"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "OSARO",
+                            "url": "https://www.osaro.com/",
+                            "description": "Machine learning-enabled robotics software for e-commerce and industrial automation.",
+                            "industry": "DeepTech"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "LUQOM Group",
+                            "url": "https://www.luqom.com/",
+                            "description": "Leading digital platform for lighting fixtures in Europe, serving B2C and B2B customers across 27 countries.",
+                            "industry": "Commerce"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "CHRIST Juweliere",
+                            "url": "https://www.christ.de/",
+                            "description": "Market-leading German jewellery and watches retailer with over 200 stores.",
+                            "industry": "Commerce"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "Dornbracht",
+                            "url": "https://www.dornbracht.com/",
+                            "description": "Premium designer fittings and accessories for bathrooms, spas, and kitchens, active in 125+ markets.",
+                            "industry": "Industry 4.0"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "givve",
+                            "url": "https://www.givve.com/",
+                            "description": "FinTech company offering employee benefit and motivation solutions for businesses.",
+                            "industry": "FinTech"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "IFASEC",
+                            "url": "https://www.ifasec.de/",
+                            "description": "IT security company specializing in automated penetration testing and code analysis.",
+                            "industry": "Business Software"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 9,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "Life Biosciences",
+                            "url": "https://www.lifebiosciences.com/",
+                            "description": "Biotechnology company pursuing therapies targeting molecular pathways that regulate the biology of aging.",
+                            "industry": "Digital Health"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 10,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "Gartenhaus GmbH",
+                            "url": "https://www.gartenhaus-gmbh.de/",
+                            "description": "Leading European online platform for garden houses, sheds, carports, terraces, and saunas.",
+                            "industry": "Commerce"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

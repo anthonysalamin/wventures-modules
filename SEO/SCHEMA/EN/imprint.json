@@ -83,17 +83,34 @@
             }
         },
         {
-            "@type": "CollectionPage",
-            "@id": "https://www.wventures.de/portfolio#webpage",
-            "url": "https://www.wventures.de/portfolio",
-            "name": "W Ventures Portfolio",
-            "description": "W Ventures is a Berlin-based venture capital and venture design firm supporting startups and companies from seed to growth across B2B and B2C sectors.",
+            "@type": "WebPage",
+            "@id": "https://www.wventures.de/imprint#webpage",
+            "url": "https://www.wventures.de/imprint",
+            "name": "Imprint | W Ventures",
+            "description": "Legal imprint and company information for W Ventures GmbH, including registered address, managing director, and contact details.",
             "inLanguage": "en",
             "isPartOf": {
                 "@id": "https://www.wventures.de/#website"
             },
             "about": {
                 "@id": "https://www.wventures.de/#organization"
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.wventures.de/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Imprint",
+                        "item": "https://www.wventures.de/imprint"
+                    }
+                ]
             }
         }
     ]

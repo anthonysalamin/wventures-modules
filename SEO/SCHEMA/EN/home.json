@@ -1,0 +1,114 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.wventures.de/#organization",
+            "name": "W Ventures GmbH",
+            "url": "https://www.wventures.de/",
+            "logo": "https://www.wventures.de/favicon.ico",
+            "description": "W Ventures is a Berlin-based venture capital firm backing bold entrepreneurs from seed to growth across FinTech, DeepTech, SaaS, Digital Health, and more. Founded in 2013 by Jochen Wilms.",
+            "slogan": "From seed to growth",
+            "foundingDate": "2013",
+            "founder": {
+                "@id": "https://www.wventures.de/#jochen-wilms"
+            },
+            "address": [
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Goethestraße 81",
+                    "addressLocality": "Berlin",
+                    "postalCode": "10623",
+                    "addressCountry": "DE"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Lissaboner Allee 1",
+                    "addressLocality": "Dortmund",
+                    "postalCode": "44269",
+                    "addressCountry": "DE"
+                }
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "info@wventures.de",
+                "availableLanguage": [
+                    "en",
+                    "de"
+                ]
+            },
+            "email": "info@wventures.de",
+            "sameAs": [
+                "https://www.linkedin.com/company/wventures/"
+            ],
+            "areaServed": [
+                "Europe",
+                "United States",
+                "Asia"
+            ],
+            "knowsAbout": [
+                "Venture Capital",
+                "Startup Acceleration",
+                "Business Development",
+                "Strategy Consulting",
+                "Digital Transformation",
+                "FinTech",
+                "SaaS",
+                "DeepTech",
+                "PropTech",
+                "Climate & Energy",
+                "Digital Health",
+                "Mobility",
+                "Industry 4.0"
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://www.wventures.de/#jochen-wilms",
+            "name": "Jochen M. Wilms",
+            "jobTitle": "Founder & Managing Director",
+            "description": "Jochen Wilms manages a portfolio of 30+ firms. He specializes in growth strategies and operational excellence and supports music and art projects worldwide.",
+            "sameAs": [
+                "https://www.linkedin.com/in/jochenwilms/"
+            ],
+            "worksFor": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.wventures.de/#website",
+            "url": "https://www.wventures.de/",
+            "name": "W Ventures",
+            "publisher": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.wventures.de/#webpage",
+            "url": "https://www.wventures.de/",
+            "name": "W Ventures | Operational VC Based in Berlin",
+            "description": "W Ventures is a Berlin-based venture capital firm backing bold entrepreneurs from seed to growth across FinTech, DeepTech, SaaS, Digital Health, and more. Founded in 2013 by Jochen Wilms.",
+            "inLanguage": "en",
+            "isPartOf": {
+                "@id": "https://www.wventures.de/#website"
+            },
+            "about": {
+                "@id": "https://www.wventures.de/#organization"
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.wventures.de/"
+                    }
+                ]
+            }
+        }
+    ]
+}
