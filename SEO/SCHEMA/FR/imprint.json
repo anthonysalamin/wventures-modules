@@ -7,8 +7,8 @@
             "name": "W Ventures GmbH",
             "url": "https://www.wventures.de/",
             "logo": "https://www.wventures.de/favicon.ico",
-            "description": "W Ventures is a Berlin-based venture capital and venture design firm supporting startups and companies from seed to growth across B2B and B2C sectors.",
-            "slogan": "From seed to growth",
+            "description": "W Ventures est une société de capital-risque et de venture design basée à Berlin, accompagnant les startups et entreprises de l'amorçage à la croissance dans les secteurs B2B et B2C.",
+            "slogan": "De l'amorçage à la croissance",
             "foundingDate": "2013",
             "founder": {
                 "@id": "https://www.wventures.de/#jochen-wilms"
@@ -69,8 +69,8 @@
             "@type": "Person",
             "@id": "https://www.wventures.de/#jochen-wilms",
             "name": "Jochen M. Wilms",
-            "jobTitle": "Founder & Managing Director",
-            "description": "Jochen Wilms manages a portfolio of 30+ firms. He specializes in growth strategies and operational excellence and supports music and art projects worldwide.",
+            "jobTitle": "Fondateur & Directeur Général",
+            "description": "Jochen Wilms gère un portefeuille de plus de 30 entreprises. Il est spécialisé dans les stratégies de croissance et l'excellence opérationnelle, et soutient des projets artistiques et musicaux dans le monde entier.",
             "sameAs": [
                 "https://www.linkedin.com/in/jochenwilms/"
             ],
@@ -94,12 +94,12 @@
             }
         },
         {
-            "@type": "AboutPage",
-            "@id": "https://www.wventures.de/about#webpage",
-            "url": "https://www.wventures.de/about",
-            "name": "About W Ventures | Operational VC Based in Berlin",
-            "description": "W Ventures is defined by respect for the entrepreneur and the entrepreneurial company building process; we know what it's like to be in the founder's shoes. We aim to connect entrepreneurs, investors, executives, engineers, academics, industry experts, and others in the technology ecosystem.",
-            "inLanguage": "en",
+            "@type": "WebPage",
+            "@id": "https://www.wventures.de/fr/imprint#webpage",
+            "url": "https://www.wventures.de/fr/imprint",
+            "name": "Mentions Légales | W Ventures",
+            "description": "Mentions légales et informations sur la société W Ventures GmbH, incluant l'adresse enregistrée, le directeur gérant et les coordonnées.",
+            "inLanguage": "fr",
             "isPartOf": {
                 "@id": "https://www.wventures.de/#website"
             },
@@ -112,14 +112,14 @@
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
-                        "item": "https://www.wventures.de/"
+                        "name": "Accueil",
+                        "item": "https://www.wventures.de/fr"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "About",
-                        "item": "https://www.wventures.de/about"
+                        "name": "Mentions légales",
+                        "item": "https://www.wventures.de/fr/imprint"
                     }
                 ]
             }

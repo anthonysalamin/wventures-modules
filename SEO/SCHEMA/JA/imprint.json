@@ -7,8 +7,8 @@
             "name": "W Ventures GmbH",
             "url": "https://www.wventures.de/",
             "logo": "https://www.wventures.de/favicon.ico",
-            "description": "W Ventures is a Berlin-based venture capital and venture design firm supporting startups and companies from seed to growth across B2B and B2C sectors.",
-            "slogan": "From seed to growth",
+            "description": "W Venturesは、B2BおよびB2Cセクター全体でスタートアップや企業をシードから成長段階まで支援するベルリン拠点のベンチャーキャピタル・ベンチャーデザイン会社です。",
+            "slogan": "シードから成長へ",
             "foundingDate": "2013",
             "founder": {
                 "@id": "https://www.wventures.de/#jochen-wilms"
@@ -69,8 +69,8 @@
             "@type": "Person",
             "@id": "https://www.wventures.de/#jochen-wilms",
             "name": "Jochen M. Wilms",
-            "jobTitle": "Founder & Managing Director",
-            "description": "Jochen Wilms manages a portfolio of 30+ firms. He specializes in growth strategies and operational excellence and supports music and art projects worldwide.",
+            "jobTitle": "創業者 & 代表取締役",
+            "description": "Jochen Wilmsは30社以上のポートフォリオを管理しています。成長戦略と業務効率化を専門とし、世界中の音楽・アートプロジェクトを支援しています。",
             "sameAs": [
                 "https://www.linkedin.com/in/jochenwilms/"
             ],
@@ -94,12 +94,12 @@
             }
         },
         {
-            "@type": "AboutPage",
-            "@id": "https://www.wventures.de/about#webpage",
-            "url": "https://www.wventures.de/about",
-            "name": "About W Ventures | Operational VC Based in Berlin",
-            "description": "W Ventures is defined by respect for the entrepreneur and the entrepreneurial company building process; we know what it's like to be in the founder's shoes. We aim to connect entrepreneurs, investors, executives, engineers, academics, industry experts, and others in the technology ecosystem.",
-            "inLanguage": "en",
+            "@type": "WebPage",
+            "@id": "https://www.wventures.de/ja/imprint#webpage",
+            "url": "https://www.wventures.de/ja/imprint",
+            "name": "会社情報 | W Ventures",
+            "description": "W Ventures GmbHの法的会社情報。登録住所、代表取締役、連絡先詳細を含みます。",
+            "inLanguage": "ja",
             "isPartOf": {
                 "@id": "https://www.wventures.de/#website"
             },
@@ -112,14 +112,14 @@
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
-                        "item": "https://www.wventures.de/"
+                        "name": "ホーム",
+                        "item": "https://www.wventures.de/ja"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "About",
-                        "item": "https://www.wventures.de/about"
+                        "name": "会社情報",
+                        "item": "https://www.wventures.de/ja/imprint"
                     }
                 ]
             }

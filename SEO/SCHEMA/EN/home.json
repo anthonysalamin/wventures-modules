@@ -35,7 +35,9 @@
                 "email": "info@wventures.de",
                 "availableLanguage": [
                     "en",
-                    "de"
+                    "de",
+                    "fr",
+                    "ja"
                 ]
             },
             "email": "info@wventures.de",
@@ -81,6 +83,12 @@
             "@id": "https://www.wventures.de/#website",
             "url": "https://www.wventures.de/",
             "name": "W Ventures",
+            "availableLanguage": [
+                "en",
+                "de",
+                "fr",
+                "ja"
+            ],
             "publisher": {
                 "@id": "https://www.wventures.de/#organization"
             }
