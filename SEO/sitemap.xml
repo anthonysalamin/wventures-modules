@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- ========================================== -->
+    <!-- HOMEPAGE CLUSTER                           -->
+    <!-- ========================================== -->
+
+    <!-- English Homepage (Default) -->
+    <url>
+        <loc>https://www.wventures.de</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de" />
+    </url>
+
+    <!-- German Homepage -->
+    <url>
+        <loc>https://www.wventures.de/de</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de" />
+    </url>
+
+    <!-- French Homepage -->
+    <url>
+        <loc>https://www.wventures.de/fr</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de" />
+    </url>
+
+    <!-- Japanese Homepage -->
+    <url>
+        <loc>https://www.wventures.de/ja</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de" />
+    </url>
+
+    <!-- ========================================== -->
+    <!-- ABOUT CLUSTER                              -->
+    <!-- ========================================== -->
+
+    <!-- English About (Default) -->
+    <url>
+        <loc>https://www.wventures.de/about</loc>
+        <lastmod>2026-05-08T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/about" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/about" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/about" />
+    </url>
+
+    <!-- German About -->
+    <url>
+        <loc>https://www.wventures.de/de/about</loc>
+        <lastmod>2026-05-08T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/about" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/about" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/about" />
+    </url>
+
+    <!-- French About -->
+    <url>
+        <loc>https://www.wventures.de/fr/about</loc>
+        <lastmod>2026-05-08T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/about" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/about" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/about" />
+    </url>
+
+    <!-- Japanese About -->
+    <url>
+        <loc>https://www.wventures.de/ja/about</loc>
+        <lastmod>2026-05-08T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/about" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/about" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/about" />
+    </url>
+
+    <!-- ========================================== -->
+    <!-- PORTFOLIO CLUSTER                          -->
+    <!-- ========================================== -->
+
+    <!-- English Portfolio (Default) -->
+    <url>
+        <loc>https://www.wventures.de/portfolio</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/portfolio" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/portfolio" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/portfolio" />
+    </url>
+
+    <!-- German Portfolio -->
+    <url>
+        <loc>https://www.wventures.de/de/portfolio</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/portfolio" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/portfolio" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/portfolio" />
+    </url>
+
+    <!-- French Portfolio -->
+    <url>
+        <loc>https://www.wventures.de/fr/portfolio</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/portfolio" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/portfolio" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/portfolio" />
+    </url>
+
+    <!-- Japanese Portfolio -->
+    <url>
+        <loc>https://www.wventures.de/ja/portfolio</loc>
+        <lastmod>2025-04-08T18:58:39.252Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/portfolio" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/portfolio" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/portfolio" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/portfolio" />
+    </url>
+
+    <!-- ========================================== -->
+    <!-- PRIVACY POLICY CLUSTER                     -->
+    <!-- ========================================== -->
+
+    <!-- English Privacy Policy (Default) -->
+    <url>
+        <loc>https://www.wventures.de/privacy-policy</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/privacy-policy" />
+    </url>
+
+    <!-- German Privacy Policy -->
+    <url>
+        <loc>https://www.wventures.de/de/privacy-policy</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/privacy-policy" />
+    </url>
+
+    <!-- French Privacy Policy -->
+    <url>
+        <loc>https://www.wventures.de/fr/privacy-policy</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/privacy-policy" />
+    </url>
+
+    <!-- Japanese Privacy Policy -->
+    <url>
+        <loc>https://www.wventures.de/ja/privacy-policy</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/privacy-policy" />
+    </url>
+
+    <!-- ========================================== -->
+    <!-- IMPRINT CLUSTER                            -->
+    <!-- ========================================== -->
+
+    <!-- English Imprint (Default) -->
+    <url>
+        <loc>https://www.wventures.de/imprint</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/imprint" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/imprint" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/imprint" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/imprint" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/imprint" />
+    </url>
+
+    <!-- German Imprint -->
+    <url>
+        <loc>https://www.wventures.de/de/imprint</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/imprint" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/imprint" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/imprint" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/imprint" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/imprint" />
+    </url>
+
+    <!-- French Imprint -->
+    <url>
+        <loc>https://www.wventures.de/fr/imprint</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/imprint" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/imprint" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/imprint" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/imprint" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/imprint" />
+    </url>
+
+    <!-- Japanese Imprint -->
+    <url>
+        <loc>https://www.wventures.de/ja/imprint</loc>
+        <lastmod>2026-06-01T00:00:00.000Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.wventures.de/de/imprint" />
+        <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.wventures.de/fr/imprint" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wventures.de/ja/imprint" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wventures.de/imprint" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wventures.de/imprint" />
+    </url>
+
+</urlset>

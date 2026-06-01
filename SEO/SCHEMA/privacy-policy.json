@@ -1,0 +1,101 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.wventures.de/#organization",
+            "name": "W Ventures GmbH",
+            "url": "https://www.wventures.de/",
+            "logo": "https://www.wventures.de/favicon.ico",
+            "description": "W Ventures is a Berlin-based venture capital and venture design firm supporting startups and companies from seed to growth across B2B and B2C sectors.",
+            "foundingDate": "2013",
+            "founder": {
+                "@id": "https://www.wventures.de/#jochen-wilms"
+            },
+            "address": [
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Goethestraße 81",
+                    "addressLocality": "Berlin",
+                    "postalCode": "10623",
+                    "addressCountry": "DE"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Lissaboner Allee 1",
+                    "addressLocality": "Dortmund",
+                    "postalCode": "44269",
+                    "addressCountry": "DE"
+                }
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "info@wventures.de",
+                "availableLanguage": [
+                    "en",
+                    "de"
+                ]
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/wventures/"
+            ],
+            "areaServed": [
+                "Europe",
+                "United States",
+                "Asia"
+            ],
+            "knowsAbout": [
+                "Venture Capital",
+                "Startup Acceleration",
+                "Business Development",
+                "Strategy Consulting",
+                "Digital Transformation",
+                "FinTech",
+                "SaaS",
+                "DeepTech",
+                "PropTech",
+                "Climate & Energy",
+                "Digital Health",
+                "Mobility",
+                "Data Protection",
+                "Industry 4.0"
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://www.wventures.de/#jochen-wilms",
+            "name": "Jochen M. Wilms",
+            "jobTitle": "Founder & Managing Director",
+            "sameAs": [
+                "https://www.linkedin.com/in/jochenwilms/"
+            ],
+            "worksFor": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.wventures.de/#website",
+            "url": "https://www.wventures.de/",
+            "name": "W Ventures",
+            "publisher": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.wventures.de/privacy-policy#webpage",
+            "url": "https://www.wventures.de/privacy-policy",
+            "name": "Privacy Policy & Data Protection | W Ventures",
+            "description": "Privacy policy and data protection guidelines for W Ventures GmbH, detailing how we collect, use, and protect your personal information.",
+            "inLanguage": "en",
+            "isPartOf": {
+                "@id": "https://www.wventures.de/#website"
+            },
+            "about": {
+                "@id": "https://www.wventures.de/#organization"
+            }
+        }
+    ]
+}
