@@ -26,14 +26,14 @@ const TRANSLATIONS = {
   },
   fr: {
     title: 'Consentement aux cookies',
-    text: 'Nous pouvons utiliser des cookies pour améliorer les performances, mesurer l\u2019utilisation et personnaliser votre expérience. Vous pouvez accepter tous les cookies ou refuser les cookies non essentiels.',
+    text: 'Nous pouvons utiliser des cookies pour améliorer les performances, mesurer l\u2019utilisation et personnaliser votre expérience.',
     acceptLabel: 'Tout accepter',
-    declineLabel: 'Refuser le non essentiel',
+    declineLabel: 'Refuser les cookies non essentiels',
     privacyLabel: 'Politique de confidentialité'
   },
   de: {
     title: 'Cookie-Einwilligung',
-    text: 'Wir verwenden möglicherweise Cookies, um die Leistung zu verbessern, die Nutzung zu messen und Ihr Erlebnis zu personalisieren. Sie können alle Cookies akzeptieren oder nicht notwendige ablehnen.',
+    text: 'Wir verwenden möglicherweise Cookies, um die Leistung zu verbessern, die Nutzung zu messen und Ihr Erlebnis zu personalisieren.',
     acceptLabel: 'Alle akzeptieren',
     declineLabel: 'Nicht notwendige ablehnen',
     privacyLabel: 'Datenschutzrichtlinie'
