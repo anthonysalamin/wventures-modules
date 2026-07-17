@@ -11,9 +11,7 @@
 
 const DARK_MODE = false;
 const CONSENT_EVENT_NAME = 'cookieConsentAccepted';
-// Default language — used when the URL has no /fr/, /en/ or /de/ segment
 const LANGUAGE = 'en';
-// Banner placement — 'left' | 'center' | 'right' (default)
 const POSITION = 'right';
 const POSITIONS = ['left', 'center', 'right'];
 const TRANSLATIONS = {
@@ -22,35 +20,35 @@ const TRANSLATIONS = {
     text: 'We may use cookies to improve performance, measure usage, and personalize your experience. You can accept all cookies or reject non-essential ones.',
     acceptLabel: 'Accept all',
     declineLabel: 'Reject non-essential',
-    privacyLabel: 'Privacy policy'
+    privacyLabel: 'Privacy policy',
+    privacyUrl: '/privacy-policy'
   },
   fr: {
     title: 'Consentement aux cookies',
     text: 'Nous pouvons utiliser des cookies pour améliorer les performances, mesurer l\u2019utilisation et personnaliser votre expérience.',
     acceptLabel: 'Tout accepter',
     declineLabel: 'Refuser les cookies non essentiels',
-    privacyLabel: 'Politique de confidentialité'
+    privacyLabel: 'Politique de confidentialité',
+    privacyUrl: '/politique-de-confidentialite'
   },
   de: {
     title: 'Cookie-Einwilligung',
     text: 'Wir verwenden möglicherweise Cookies, um die Leistung zu verbessern, die Nutzung zu messen und Ihr Erlebnis zu personalisieren.',
     acceptLabel: 'Alle akzeptieren',
     declineLabel: 'Nicht notwendige ablehnen',
-    privacyLabel: 'Datenschutzrichtlinie'
+    privacyLabel: 'Datenschutzrichtlinie',
+    privacyUrl: '/datenschutzrichtlinie'
   }
 };
 
 function getLanguage() {
-  // Detect a /fr/, /en/ or /de/ segment anywhere in the URL path
   const match = window.location.pathname.match(/\/(fr|en|de)(?:\/|$)/i);
-  // 🥭 Guard clause — no language segment, use the configured default
   if (!match) return LANGUAGE;
   return match[1].toLowerCase();
 }
 
 function getTranslation() {
   const language = getLanguage();
-  // 🥭 Guard clause — fall back to English for unsupported languages
   if (!TRANSLATIONS[language]) {
     console.warn('getTranslation: no translation for "' + language + '", falling back to "en"');
     return TRANSLATIONS.en;
@@ -59,7 +57,6 @@ function getTranslation() {
 }
 
 function getPosition() {
-  // 🥭 Guard clause — fall back to 'right' for unsupported positions
   if (!POSITIONS.includes(POSITION)) {
     console.warn('getPosition: invalid position "' + POSITION + '", falling back to "right"');
     return 'right';
@@ -77,7 +74,7 @@ const OPTIONS = {
   acceptLabel: COPY.acceptLabel,
   declineLabel: COPY.declineLabel,
   privacyLabel: COPY.privacyLabel,
-  privacyUrl: '/privacy-policy'
+  privacyUrl: COPY.privacyUrl
 };
 
 function dispatchConsentAccepted() {
@@ -98,24 +95,20 @@ function getCookie(name) {
 
 function enableConsentScripts() {
   const gatedScripts = document.querySelectorAll('script[type="cookie-check"]');
-  // 🥭 Guard clause
   if (!gatedScripts.length) {
     console.warn('enableConsentScripts: no [type="cookie-check"] scripts found, skipping');
     return;
   }
   gatedScripts.forEach(oldScript => {
-    // 🥭 Guard clause — never activate the same script twice
     if (oldScript.dataset.consentActivated) return;
     oldScript.dataset.consentActivated = 'true';
 
     const newScript = document.createElement('script');
-    // Copy every attribute except the gating ones
     [...oldScript.attributes].forEach(attr => {
       if (attr.name === 'type' || attr.name === 'cookie-check') return;
       newScript.setAttribute(attr.name, attr.value);
     });
     newScript.type = 'text/javascript';
-    // Inline snippet — copy the code body (src scripts execute via the copied src attribute)
     if (!oldScript.src) newScript.textContent = oldScript.textContent;
 
     oldScript.replaceWith(newScript);
@@ -143,7 +136,6 @@ function buildBannerStyles() {
 }
 
 export function initCookieConsent() {
-  // 🥭 Guard clause — run once only
   if (document.body.dataset.cookieConsentLoaded) {
     console.warn('initCookieConsent: banner already initialized, skipping');
     return;
@@ -152,7 +144,6 @@ export function initCookieConsent() {
 
   document.addEventListener(CONSENT_EVENT_NAME, enableConsentScripts);
 
-  // 🥭 Guard clause — respect an existing choice stored in the "necessary" cookie
   const existingChoice = getCookie(OPTIONS.cookieName);
   if (existingChoice) {
     if (existingChoice === 'accepted') dispatchConsentAccepted();
@@ -176,7 +167,6 @@ export function initCookieConsent() {
   const acceptBtn = banner.querySelector('.cookie-accept');
   const declineBtn = banner.querySelector('.cookie-decline');
 
-  // 🥭 Guard clause — buttons must exist before binding
   if (!acceptBtn || !declineBtn) {
     console.warn('initCookieConsent: no consent buttons found, skipping');
     return;
