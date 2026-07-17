@@ -31,6 +31,7 @@ import { initScrollProgress } from 'https://cdn.wventures.de/js/initScrollProgre
 import { initCurrentYear } from 'https://cdn.wventures.de/js/initCurrentYear.js?v=1.0.0';
 import { initCustomCursor } from 'https://cdn.wventures.de/js/initCustomCursor.js?v=1.0.0';
 import { initSVGInjection } from 'https://cdn.wventures.de/js/initSVGInjection.js?v=1.0.0';
+import { initCookieConsent } from 'https://cdn.wventures.de/js/initCookieConsent.js?v=1.0.0';
 
 // ── Runner ───────────────────────────────────────────────────────────────────
 
@@ -79,6 +80,7 @@ async function initApp() {
     run("TypedFields", initTypedFields);
     run("CurrentYear", initCurrentYear);
     run("SVGInjection", initSVGInjection);
+    run("CookieConsent", initCookieConsent);
 
     console.log("✅ DOM modules initialized");
 
