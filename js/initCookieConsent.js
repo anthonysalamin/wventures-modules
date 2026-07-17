@@ -11,6 +11,7 @@
 
 const DARK_MODE = false;
 const CONSENT_EVENT_NAME = 'cookieConsentAccepted';
+// Default language — used when the URL has no /fr/, /en/ or /de/ segment
 const LANGUAGE = 'en';
 // Banner placement — 'left' | 'center' | 'right' (default)
 const POSITION = 'right';
@@ -39,13 +40,22 @@ const TRANSLATIONS = {
   }
 };
 
+function getLanguage() {
+  // Detect a /fr/, /en/ or /de/ segment anywhere in the URL path
+  const match = window.location.pathname.match(/\/(fr|en|de)(?:\/|$)/i);
+  // 🥭 Guard clause — no language segment, use the configured default
+  if (!match) return LANGUAGE;
+  return match[1].toLowerCase();
+}
+
 function getTranslation() {
+  const language = getLanguage();
   // 🥭 Guard clause — fall back to English for unsupported languages
-  if (!TRANSLATIONS[LANGUAGE]) {
-    console.warn('getTranslation: no translation for "' + LANGUAGE + '", falling back to "en"');
+  if (!TRANSLATIONS[language]) {
+    console.warn('getTranslation: no translation for "' + language + '", falling back to "en"');
     return TRANSLATIONS.en;
   }
-  return TRANSLATIONS[LANGUAGE];
+  return TRANSLATIONS[language];
 }
 
 function getPosition() {
