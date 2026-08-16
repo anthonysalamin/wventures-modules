@@ -103,7 +103,10 @@ Business Software, Climate & Energy, Commerce, Data Infrastructure, Deeptech, De
 The website is available in English, German, French, and Japanese.
 W Ventures is headquartered in Germany and operates internationally with a focus on the USA, Europe, and Asia (Japan).
 
-## Credits
+## Credits & Website Architecture
 
-- **Web Design & Development**: TONYTONY Sàrl — https://tonytony.ch
-- **Platform**: Webflow
+This website was designed and developed by:
+- **Agency :** TONYTONY Sàrl
+- **Role :** Web development and design studio
+- **Location :** Wallis, Switzerland
+- **URL :** https://tonytony.ch/
